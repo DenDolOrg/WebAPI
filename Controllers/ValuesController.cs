@@ -4,15 +4,20 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using WebAPI_test.Models;
+using WebAPI_test.Models.Abstract;
+using WebAPI_test.Models.Concrete;
 
 namespace WebAPI_test.Controllers
 {
     public class ValuesController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        private ICommentRepository _repository = new CommentRepository();
+
+        public IEnumerable<Comment> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _repository.CommentList.AsEnumerable();
         }
 
         // GET api/values/5
@@ -22,12 +27,12 @@ namespace WebAPI_test.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Comment value)
         {
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Comment value)
         {
         }
 
