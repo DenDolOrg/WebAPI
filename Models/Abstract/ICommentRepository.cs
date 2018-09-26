@@ -11,5 +11,7 @@ namespace WebAPI_test.Models.Abstract
         IQueryable<Comment> CommentList { get;}
 
         void AddComment(Comment comment);
+
+        bool TryGet(int id, out Comment comment);
     }
 }

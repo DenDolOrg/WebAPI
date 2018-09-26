@@ -22,5 +22,13 @@ namespace WebAPI_test.Models.Concrete
                 context.SaveChanges();
             }
         }
+
+        public bool TryGet(int id, out Comment comment)
+        {
+            comment = context.CommentRep.FirstOrDefault(e => e.Id == id);
+            if (comment != null)
+                return true;
+            return false;
+        }
     }
 }
