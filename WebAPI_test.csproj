@@ -236,6 +236,7 @@
     </Content>
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\knockout-3.5.0rc2.js" />
+    <Content Include="Scripts\myScript.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
