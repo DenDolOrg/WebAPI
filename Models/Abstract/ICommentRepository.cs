@@ -13,5 +13,7 @@ namespace WebAPI_test.Models.Abstract
         void AddComment(Comment comment);
 
         bool TryGet(int id, out Comment comment);
+
+        void RemoveComment(int id);
     }
 }

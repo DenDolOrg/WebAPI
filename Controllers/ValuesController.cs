@@ -42,8 +42,16 @@ namespace WebAPI_test.Controllers
         }
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public Comment Delete(int id)
         {
+            Comment comment;
+            if (!_repository.TryGet(id, out comment))
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+            }
+            _repository.RemoveComment(id);
+
+            return comment;
         }
     }
 }

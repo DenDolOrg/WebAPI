@@ -23,6 +23,12 @@ namespace WebAPI_test.Models.Concrete
             }
         }
 
+        public void RemoveComment(int id)
+        {
+                context.CommentRep.Remove(context.CommentRep.ElementAt(id - 1));
+                context.SaveChanges();
+        }
+
         public bool TryGet(int id, out Comment comment)
         {
             comment = context.CommentRep.FirstOrDefault(e => e.Id == id);
