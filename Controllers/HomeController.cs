@@ -18,15 +18,8 @@ namespace WebAPI_test.Controllers
         }
         public ActionResult Index()
         {
-            int count = _repository.CommentList.Count() + 1;
-            _repository.AddComment(new Comment()
-            {
-                Autor = "Autor" + count,
-                Text = "Text" + +count
-            });
-
             ViewBag.Title = "Home Page";
-            return View(_repository.CommentList.AsEnumerable());
+            return View();
         }
     }
 }
