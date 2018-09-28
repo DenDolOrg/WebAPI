@@ -25,7 +25,7 @@ namespace WebAPI_test.Models.Concrete
 
         public void RemoveComment(int id)
         {
-                context.CommentRep.Remove(context.CommentRep.ElementAt(id - 1));
+                context.CommentRep.Remove(context.CommentRep.Find(id));
                 context.SaveChanges();
         }
 

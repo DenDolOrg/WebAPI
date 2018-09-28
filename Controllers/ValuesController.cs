@@ -42,7 +42,7 @@ namespace WebAPI_test.Controllers
         }
 
         // DELETE api/values/5
-        public Comment Delete(int id)
+        public Comment DeleteComment(int id)
         {
             Comment comment;
             if (!_repository.TryGet(id, out comment))
